@@ -13,6 +13,7 @@
         <link href="/assets/bucket/font-awesome/css/font-awesome.css" rel="stylesheet">
         <link href="/assets/bucket/js/jvector-map/jquery-jvectormap-1.2.2.css" rel="stylesheet">
         <link href="/assets/bucket/css/clndr.css" rel="stylesheet">
+        <link href="/assets/bucket/css/blue-theme.css" rel="stylesheet">
         
         <!--clock css-->
         <link href="/assets/bucket/js/css3clock/css/style.css" rel="stylesheet">

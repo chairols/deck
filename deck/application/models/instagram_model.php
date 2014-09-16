@@ -1,40 +1,40 @@
 <?php
 
-class Cuentas_model extends CI_Model {
+class Instagram_model extends CI_Model {
     public function __construct() {
         $this->load->database();
     }
     
     /*
-     *  twitter/callback
+     *  
      */
     public function get_where($datos) {
-        $query = $this->db->get_where('cuentas', $datos);
+        $query = $this->db->get_where('instagram', $datos);
         
         return $query->row_array();
     }
     
     /*
-     *  twitter/callback
+     *  
      */
     public function gets_where($datos) {
-        $query = $this->db->get_where('cuentas', $datos);
+        $query = $this->db->get_where('instagram', $datos);
         
         return $query->result_array();
     }
     
     /*
-     *  twitter/callback
+     *  
      */
     public function set($datos) {
-        $this->db->insert('cuentas', $datos);
+        $this->db->insert('instagram', $datos);
     }
     
-    public function delete($idcuenta) {
+    public function delete($idinstagram) {
         $datos = array(
-            'idcuenta' => $idcuenta
+            'idinstagram' => $idinstagram
         );
-        $this->db->delete('cuentas', $datos);
+        $this->db->delete('instagram', $datos);
     }
 }
 ?>

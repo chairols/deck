@@ -73,20 +73,24 @@
                                                     <table class="table table-responsive table-bordered table-striped table-condensed">
                                                         <thead>
                                                             <tr>
+                                                                <th>Imagen</th>
                                                                 <th>Cuenta</th>
+                                                                <th>Followers</th>
+                                                                <th>Tweets</th>
                                                                 <th>Acción</th>
                                                                 <th>Fecha</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <?php foreach($cuentas as $cuenta) { ?>
-                                                            <?php if($cuenta['red_social'] == 'twitter') { ?>
+                                                            <?php foreach($twitters as $twitter) { ?>
                                                             <tr>
-                                                                <td><?=$cuenta['cuenta']?></td>
-                                                                <td><a href="#"><button type="submit" class="btn btn-danger">Borrar</button></a></td>
-                                                                <td><?=$cuenta['timestamp']?></td>
+                                                                <td><img src="<?=$twitter['imagen']?>"></td>
+                                                                <td><?=$twitter['twitter']?></td>
+                                                                <td><?=$twitter['followers']?></td>
+                                                                <td><?=$twitter['tweets']?></td>
+                                                                <td><a href="/twitter/borrar/<?=$twitter['idtwitter']?>"><button type="submit" class="btn btn-danger">Borrar</button></a></td>
+                                                                <td><?=$twitter['timestamp']?></td>
                                                             </tr>
-                                                            <?php } ?>
                                                             <?php } ?>
                                                         </tbody>
                                                     </table>
@@ -110,7 +114,11 @@
                                 Foursquare api, proximamente
                             </div>
                             <div id="instagram" class="tab-pane">
-                                Instagram api, proximamente
+                                
+                                <a href="<?=$instagram_url?>">
+                                    <button type="button" class="btn btn-success btn-block">Agregar cuenta</button>
+                                </a>
+                                
                             </div>
                             <div id="pinterest" class="tab-pane">
                                 Pinterest api, proximamente

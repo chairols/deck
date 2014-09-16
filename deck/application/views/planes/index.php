@@ -17,7 +17,7 @@
                                     <p>por mes</p>
                                 </div>
                                 <ul class="list-unstyled">
-                                    <li><i class="fa fa-check"></i> Hasta 3 cuentas de Twitter</li>
+                                    <li><i class="fa fa-check"></i> Hasta 3 cuentas</li>
                                 </ul>
                                 <div class="price-actions">
                                     <a href="#" class="btn">Compre este plan !</a>
@@ -34,7 +34,7 @@
                                     <p>por mes</p>
                                 </div>
                                 <ul class="list-unstyled">
-                                    <li><i class="fa fa-check"></i> Hasta 10 cuentas de Twitter</li>
+                                    <li><i class="fa fa-check"></i> Hasta 10 cuentas</li>
                                 </ul>
                                 <div class="price-actions">
                                     <a href="#" class="btn">Compre este plan !</a>
@@ -51,7 +51,7 @@
                                     <p>por mes</p>
                                 </div>
                                 <ul class="list-unstyled">
-                                    <li><i class="fa fa-check"></i> Hasta 20 cuentas de Twitter</li>
+                                    <li><i class="fa fa-check"></i> Hasta 20 cuentas</li>
                                 </ul>
                                 <div class="price-actions">
                                     <a href="#" class="btn">Compre este plan !</a>
