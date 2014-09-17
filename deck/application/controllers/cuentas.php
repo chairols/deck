@@ -11,7 +11,8 @@ class Cuentas extends CI_Controller {
             'instagram_api'
         ));
         $this->load->model(array(
-            'twitter_model'
+            'twitter_model',
+            'instagram_model'
         ));
         $this->load->helper(array(
             'url'
@@ -58,6 +59,22 @@ class Cuentas extends CI_Controller {
          *  Obtencion de url para instagram
          */
         $data['instagram_url'] = $this->instagram_api->instagramLogin();
+        
+        /*
+         *  Instagram
+         */
+        $datos = array(
+            'idusuario' => $session['SID']
+        );
+        $data['instagram'] = $this->instagram_model->gets_where($datos);
+        foreach ($data['instagram'] as $key => $value) {
+            $this->instagram_api->access_token = $value['token'];
+            $authorize = $this->instagram_api->getUser($value['idexterno']);
+            $data['instagram'][$key]['imagen'] = $authorize->data->profile_picture;
+            $data['instagram'][$key]['usuario'] = $authorize->data->username;
+            $data['instagram'][$key]['followers'] = $authorize->data->counts->followed_by;
+            $data['instagram'][$key]['posts'] = $authorize->data->counts->media;
+        }
         
         $this->load->view('layout/header');
         $this->load->view('layout/menu', $data);

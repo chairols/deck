@@ -70,7 +70,7 @@
                                         <section class="panel">
                                             <div class="panel-body">
                                                 <section id="unseen">
-                                                    <table class="table table-responsive table-bordered table-striped table-condensed">
+                                                    <table class="table table-responsive table-hover">
                                                         <thead>
                                                             <tr>
                                                                 <th>Imagen</th>
@@ -119,6 +119,40 @@
                                     <button type="button" class="btn btn-success btn-block">Agregar cuenta</button>
                                 </a>
                                 
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <section class="panel">
+                                            <div class="panel-body">
+                                                <section id="unseen">
+                                                    <table class="table table-responsive table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Imagen</th>
+                                                                <th>Cuenta</th>
+                                                                <th>Followers</th>
+                                                                <th>Posts</th>
+                                                                <th>Acción</th>
+                                                                <th>Fecha</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php foreach($instagram as $insta) { ?>
+                                                            <tr>
+                                                                <td><img height="48px" width="48px" src="<?=$insta['imagen']?>"></td>
+                                                                <td><?=$insta['usuario']?></td>
+                                                                <td><?=$insta['followers']?></td>
+                                                                <td><?=$insta['posts']?></td>
+                                                                <td><a href="/instagram/borrar/<?=$insta['idinstagram']?>"><button type="submit" class="btn btn-danger">Borrar</button></a></td>
+                                                                <td><?=$insta['timestamp']?></td>
+                                                            </tr>
+                                                            <?php } ?>
+                                                        </tbody>
+                                                    </table>
+                                                </section>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
                             </div>
                             <div id="pinterest" class="tab-pane">
                                 Pinterest api, proximamente

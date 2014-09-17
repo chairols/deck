@@ -6,7 +6,8 @@ class Instagram_model extends CI_Model {
     }
     
     /*
-     *  
+     *  instagram/callback
+     *  instagram/borrar
      */
     public function get_where($datos) {
         $query = $this->db->get_where('instagram', $datos);
@@ -24,12 +25,16 @@ class Instagram_model extends CI_Model {
     }
     
     /*
-     *  
+     *  instagram/callback
      */
     public function set($datos) {
         $this->db->insert('instagram', $datos);
+        return $this->db->insert_id();
     }
     
+    /*
+     *  instagram/borrar
+     */
     public function delete($idinstagram) {
         $datos = array(
             'idinstagram' => $idinstagram

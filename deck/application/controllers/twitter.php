@@ -9,7 +9,8 @@ class Twitter extends CI_Controller {
         ));
         $this->load->model(array(
             'twitter_model',
-            'planes_model'
+            'planes_model',
+            'cuentas_model'
         ));
         $this->load->helper(array(
             'url'
@@ -85,7 +86,7 @@ class Twitter extends CI_Controller {
             $datos = array(
                 'idusuario' => $session['SID']
             );
-            $cuentas = $this->twitter_model->gets_where($datos);
+            $cuentas = $this->cuentas_model->gets_where($datos);
             // Chequeo que se puedan agregar cuentas segun plan
             
             
@@ -97,9 +98,14 @@ class Twitter extends CI_Controller {
                     'idusuario' => $session['SID'],
                     'activo' => 1
                 );
+                $id = $this->twitter_model->set($datos);
                 
-                $this->twitter_model->set($datos);
-                
+                $datos = array(
+                    'tabla' => 'twitter',
+                    'idtabla' => $id,
+                    'idusuario' => $session['SID']
+                );
+                $this->cuentas_model->set($datos);
             }
         }
 
@@ -128,6 +134,12 @@ class Twitter extends CI_Controller {
         
         if(!empty($cuenta)) {
             $this->twitter_model->delete($idtwitter);
+            $datos = array(
+                'tabla' => 'twitter',
+                'idtabla' => $idtwitter,
+                'idusuario' => $session['SID']
+            );
+            $this->cuentas_model->delete($datos);
         }
         
         redirect('/cuentas/', 'refresh');

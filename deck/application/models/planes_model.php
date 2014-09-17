@@ -3,7 +3,13 @@ class Planes_model extends CI_Model {
     public function __construct() {
         $this->load->database();
     }
-        
+    
+    /*
+     *  twitter/callback
+     *  instagram/callback
+     * 
+     */
+    
     public function get($idusuario) {
         $query = $this->db->query("SELECT p.*
                                     FROM
